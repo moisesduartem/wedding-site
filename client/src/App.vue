@@ -4,6 +4,7 @@
     <div id="content">
       <router-view/>
     </div>
+    <small id="credits"><a href="http://github.com/moisesduartem">Moisés Mariano</a></small>
   </div>
 </template>
 
@@ -32,6 +33,16 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: #fff7f9;
 }
+
+#credits {
+  font-size: 17px;
+  margin: 10px;
+  padding: 10px;
+}
+
+#credits a {
+  transition: all .2s ease-in-out;
+}
+
 </style>

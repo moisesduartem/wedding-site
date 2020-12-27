@@ -36,7 +36,6 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 100%;
   background: #fff7f9;
 }
 </style>

@@ -4,8 +4,9 @@
       "{{ content }}"
     </div>
     <hr>
-    <div class="message-author subtitle has-text-grey">
+    <div class="subtitle has-text-grey">
       <i>Enviada por <strong class="has-text-grey">{{ username }}</strong></i>
+      <span class="has-text-grey">{{ (new Date(createdAt)).toLocaleString() }}  </span>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@ export default {
     username: String,
     content: String,
     imagePath: String,
+    createdAt: String,
   }
 }
 </script>
@@ -30,5 +32,10 @@ export default {
 .message-content {
   text-align: center;
   margin: 25px;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

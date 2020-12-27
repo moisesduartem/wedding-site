@@ -2,7 +2,12 @@
   <div>
     <h1 class="title is-3 has-text-grey">Mensagens Recebidas</h1>
       <div v-for="(message, i) in messages" :key="i">
-        <message :content="message.content" :username="message.username" :imagePath="message.image_path" />
+        <message
+          :content="message.content"
+          :username="message.username"
+          :imagePath="message.image_path"
+          :createdAt="message.created_at"
+        />
       </div>
   </div>
 </template>

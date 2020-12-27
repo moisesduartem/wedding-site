@@ -8,7 +8,7 @@
     <div class="has-text-black">
     </div>
     <div v-for="(message, i) in messages" :key="i">
-      <message :content="message.content" :username="message.username" :imagePath="message.image_path" />
+      <message :content="message.content" :username="message.username" :imagePath="message.image_path" /> 
     </div>
   </div>
   </div>

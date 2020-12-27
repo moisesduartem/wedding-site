@@ -1,11 +1,11 @@
 <template>
-  <div class="card">
-    <div class="message-content title is-4">
+  <div class="card has-background-dark">
+    <div class="message-content title is-4 has-text-light">
       "{{ content }}"
     </div>
     <hr>
-    <div class="message-author subtitle">
-      <i>Enviada por <strong>{{ username }}</strong></i>
+    <div class="message-author subtitle has-text-grey">
+      <i>Enviada por <strong class="has-text-light">{{ username }}</strong></i>
     </div>
   </div>
 </template>

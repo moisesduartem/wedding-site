@@ -1,9 +1,9 @@
 <template>
-<nav class="panel is-info">
+<nav class="panel is-dark">
   <p class="panel-heading">
     Mensagens Recebidas
   </p>
-  <div class="panel-block has-background-info">
+  <div class="panel-block has-background-dark">
      <div id="message-list">
     <div class="has-text-black">
     </div>

@@ -1,5 +1,5 @@
-<template class="has-background-primary">
-  <div id="app" class="has-background-info-light">
+<template>
+  <div id="app" class="has-background-dark">
     <custom-header />
     <router-view/>
   </div>

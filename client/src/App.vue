@@ -23,7 +23,7 @@ export default {
 }
 
 body {
-  padding: 25px;
+  padding: 45px;
   display: flex;
   flex-direction: column;
   text-align: center;

@@ -3,7 +3,7 @@
     <h1 class="title is-3 has-text-grey">Mensagens Recebidas</h1>
     <!-- <div class="card"> -->
       <p v-if="!messages.length">
-          Não existem recebemos mensagens até agora. Seja o(a) primeiro(a)!
+          Ainda não existem mensagens. Seja o(a) primeiro(a)!
       </p>
     <!-- </div> -->
       <div v-for="(message, i) in messages" :key="i">

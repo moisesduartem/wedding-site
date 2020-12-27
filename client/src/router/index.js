@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: '/message/send',
-    name: 'Home',
+    name: 'Envie-nos uma mensagem',
     component: SendMessage
   }
 ]

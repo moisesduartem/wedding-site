@@ -8,6 +8,7 @@
     <!-- </div> -->
       <div v-for="(message, i) in messages" :key="i">
         <message
+          :id="message.id"
           :content="message.content"
           :username="message.username"
           :imagePath="message.image_path"

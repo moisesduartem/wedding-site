@@ -29,14 +29,9 @@ export default {
 }
 
 body {
-  height: 100vh;
-}
-
-#app {
   display: flex;
   flex-direction: column;
   text-align: center;
   background: #fff7f9;
-  height: 100%;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="card has-background-white">
+    <div @click="deleteMessage" class="delete-message title is-5 has-text-danger">X</div>
     <div class="message-content title is-4 has-text-grey">
       "{{ content }}"
     </div>
@@ -12,12 +13,21 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   props: {
+    id: Number,
     username: String,
     content: String,
     imagePath: String,
     createdAt: String,
+  },
+  methods: {
+    async deleteMessage() {
+      axios.delete(`http://localhost:3000/messages/${this.id}`);
+      return document.location.reload(true);
+    }
   }
 }
 </script>
@@ -38,4 +48,18 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
+.delete-message {
+  font-weight: 300;
+  text-align: right;
+  padding:auto;
+  opacity: 0.4;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.delete-message:hover {
+  opacity: 0.9;
+}
+
 </style>

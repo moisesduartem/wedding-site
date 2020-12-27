@@ -14,11 +14,13 @@
       <div class="field">
         <div class="control">
           <button class="button is-info is-fullwidth">Enviar</button>
-          <transition name="fade">
-            <p v-if="errors.length" id="error" class="has-text-danger">
+            <p v-if="errors.length" class="form-status error-status has-text-danger">
               {{errors[0]}}
             </p>
-          </transition>
+            <p v-if="success" class="form-status success-status has-text-success">
+              Mensagem enviada com sucesso!
+            </p>
+
         </div>
       </div>
     </div>
@@ -27,9 +29,12 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
+      success: false,
       errors: [],
       username: '',
       content: '',
@@ -37,25 +42,44 @@ export default {
   },
   methods: {
     checkForm(e) {
-      this.errors = [];
-
-      if (!this.username || !this.content) {
-        this.errors.push('Preencha todos os campos corretamente.');
-      }
-
-
 
       e.preventDefault();
+
+      this.errors = [];
+      this.success = false;
+
+      if (!this.username || !this.content) {
+        return this.errors.push('Preencha todos os campos corretamente.');
+      }
+
+      if (this.sendMessageData(this.username, this.content)) {
+        this.success = true;
+        this.username = '', this.content = '';
+        return ;
+      }
+
+    },
+
+    async sendMessageData(username, content) {
+      const response = await axios.post('http://localhost:3000/messages', { username, content });
+      return response;
     }
   }
 }
 </script>
 
 <style scoped>
-#error {
+.form-status {
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid red;
+}
+
+.error-status {
+    border: 1px solid red;
+}
+
+.success-status {
+    border: 1px solid #16bb16;
 }
 
 .title {

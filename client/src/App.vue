@@ -1,7 +1,9 @@
 <template>
-  <div id="app" class="has-background-dark">
+  <div id="app">
     <custom-header />
-    <router-view/>
+    <div id="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -22,11 +24,19 @@ export default {
   margin: 0;
 }
 
-#app {
+#content {
   padding: 35px;
+}
+
+body {
+  height: 100vh;
+}
+
+#app {
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
+  height: 100%;
+  background: #fff7f9;
 }
 </style>

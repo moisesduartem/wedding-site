@@ -1,11 +1,11 @@
 <template>
-  <div class="card has-background-dark">
-    <div class="message-content title is-4 has-text-light">
+  <div class="card has-background-white">
+    <div class="message-content title is-4 has-text-grey">
       "{{ content }}"
     </div>
     <hr>
     <div class="message-author subtitle has-text-grey">
-      <i>Enviada por <strong class="has-text-light">{{ username }}</strong></i>
+      <i>Enviada por <strong class="has-text-grey">{{ username }}</strong></i>
     </div>
   </div>
 </template>
@@ -23,7 +23,8 @@ export default {
 <style scoped>
 .card {
   padding: 25px;
-  margin: 2%;
+  width: calc(20% + 350px);
+  margin: 3% auto;
 }
 
 .message-content {

@@ -1,18 +1,10 @@
 <template>
-<nav class="panel is-dark">
-  <p class="panel-heading">
-    Mensagens Recebidas
-  </p>
-  <div class="panel-block has-background-dark">
-     <div id="message-list">
-    <div class="has-text-black">
-    </div>
-    <div v-for="(message, i) in messages" :key="i">
-      <message :content="message.content" :username="message.username" :imagePath="message.image_path" /> 
-    </div>
+  <div>
+    <h1 class="title is-3 has-text-grey">Mensagens Recebidas</h1>
+      <div v-for="(message, i) in messages" :key="i">
+        <message :content="message.content" :username="message.username" :imagePath="message.image_path" />
+      </div>
   </div>
-  </div>
-</nav>
 </template>
 
 <script>
@@ -39,6 +31,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .panel {

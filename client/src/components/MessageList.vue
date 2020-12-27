@@ -1,6 +1,11 @@
 <template>
   <div>
     <h1 class="title is-3 has-text-grey">Mensagens Recebidas</h1>
+    <!-- <div class="card"> -->
+      <p v-if="!messages.length">
+          Não existem recebemos mensagens até agora. Seja o(a) primeiro(a)!
+      </p>
+    <!-- </div> -->
       <div v-for="(message, i) in messages" :key="i">
         <message
           :content="message.content"
@@ -23,7 +28,7 @@ export default {
   },
   async created() {
     const response = await axios.get('http://localhost:3000/messages');
-    this.messages = response.data;
+    this.messages = (response.data).reverse();
   },
   components: {
     Message,

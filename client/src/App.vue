@@ -4,7 +4,15 @@
     <div id="content">
       <router-view/>
     </div>
-    <small id="credits"><a href="http://github.com/moisesduartem">Moisés Mariano</a></small>
+    <div class="box has-background-dark has-text-light" id="credits">
+      <div class="has-text-grey">
+        Credits:
+      </div>
+      <div>Moisés Mariano</div>
+      <a class="has-text-info" href="http://github.com/moisesduartem/wedding-site">Github</a>
+      <br>
+      <a href="https://www.linkedin.com/in/moisesduartem/" class="has-text-info">Linkedin</a>
+    </div>
   </div>
 </template>
 
@@ -37,6 +45,7 @@ body {
 
 #credits {
   font-size: 17px;
+  width: 200px;
   margin: 10px;
   padding: 10px;
 }

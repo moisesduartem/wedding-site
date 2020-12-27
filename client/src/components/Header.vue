@@ -17,6 +17,7 @@ export default {
   }
 
   #header {
+    display: fixed;
     padding: 23px;
   }
 </style>

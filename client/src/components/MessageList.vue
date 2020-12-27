@@ -1,24 +1,23 @@
 <template>
-  <div id="message-list">
-    <h2 class="title is-3">Felicitações</h2>
-    <hr>
+<nav class="panel is-info">
+  <p class="panel-heading">
+    Mensagens Recebidas
+  </p>
+  <div class="panel-block has-background-info">
+     <div id="message-list">
+    <div class="has-text-black">
+    </div>
     <div v-for="(message, i) in messages" :key="i">
-      <div class="card">
-        <div class="message-content">
-          {{ message.content }}
-        </div>
-        <hr>
-        <div class="message-author">
-          <i>Enviada por <strong>{{ message.username }}</strong></i>
-        </div>
-      </div>
+      <message :content="message.content" :username="message.username" :imagePath="message.image_path" />
     </div>
   </div>
+  </div>
+</nav>
 </template>
 
 <script>
 import axios from 'axios';
-
+import Message from './Message';
 export default {
   data() {
     return {
@@ -28,17 +27,30 @@ export default {
   async created() {
     const response = await axios.get('http://localhost:3000/messages');
     this.messages = response.data;
-  }
+  },
+  components: {
+    Message,
+  },
 }
 </script>
 
 <style scoped>
 #message-list {
-  margin: 25px;
-  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel {
+  margin: calc(1.5% + 15px) auto;
+}
+
+.panel-block {
+    padding: 2.5%;
 }
 
 .title {
   font-weight: 300;
+  margin: 15px;
 }
 </style>

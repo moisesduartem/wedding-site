@@ -1,5 +1,5 @@
-<template>
-  <div id="app">
+<template class="has-background-primary">
+  <div id="app" class="has-background-info-light">
     <custom-header />
     <router-view/>
   </div>
@@ -22,8 +22,8 @@ export default {
   margin: 0;
 }
 
-body {
-  padding: 45px;
+#app {
+  padding: 35px;
   display: flex;
   flex-direction: column;
   text-align: center;
